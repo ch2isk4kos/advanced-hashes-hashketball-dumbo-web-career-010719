@@ -137,12 +137,16 @@ def all_players(players)
 end
 
 def num_points_scored(player_x)
-	all_players.each do |player|
-		if player[:player_name] == player_x
-			return player[:points]
-		end
-	end
+	all_players.each {|player| return player[:points] if player[:player_name] == player_x } 
 end
+
+# def num_points_scored(player_x)
+# 	all_players.each do |player|
+# 		if player[:player_name] == player_x
+# 			return player[:points]
+# 		end
+# 	end
+# end
 
 # def num_points_scored(player_x)
 #     game_hash.each do |home_away, keys|
