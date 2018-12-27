@@ -126,13 +126,31 @@ def game_hash
     }
 end
 
-def num_points_scored(player_x)
-    game_hash.each do |home_away, keys|
-        keys[:players].each do |player|
-            return player[:points] if player[:player_name] == player_x
-        end
-    end
+def all_players(players)
+	new_array = []
+	game_hash.each do |home_away, value|
+		value[:players].each do |player|
+			new_array << player	
+		end
+	end
+	new_array
 end
+
+def num_points_scored(player_x)
+	all_players.each do |player|
+		if player[:player_name] == player_x
+			return player[:points]
+		end
+	end	
+end
+
+# def num_points_scored(player_x)
+#     game_hash.each do |home_away, keys|
+#         keys[:players].each do |player|
+#             return player[:points] if player[:player_name] == player_x
+#         end
+#     end
+# end
 
 # def num_points_scored(player)
 #     game_hash.each do |team, stats|
