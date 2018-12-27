@@ -137,7 +137,7 @@ def all_players(players)
 end
 
 def num_points_scored(player_x)
-	all_players.each {|player| return player[:points] if player[:player_name] == player_x } 
+	all_players.each {|player| return player[:points] if player[:player_name] == player_x }
 end
 
 # def num_points_scored(player_x)
